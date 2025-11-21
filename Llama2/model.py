@@ -133,7 +133,7 @@ class Transformer(PreTrainedModel):
                 logits = logits / temperature
                 if top_k is not None:
                     v, _ = torch.topk(logits, min(top_k, logits.size(-1)))
-                    logits[logits < v[:, [-1]]] = -float('Inf')
+                    logits[logits < v[:, [-1]]] = -float('Inf') #确保采样只发生在概率最高的 k 个 token 中
                 probs = F.softmax(logits, dim=-1)
                 idx_next = torch.multinomial(probs, num_samples=1)
             
