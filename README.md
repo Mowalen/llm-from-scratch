@@ -4,7 +4,7 @@
 
 ## 📖 关于本项目 (About)
 
-本仓库汇集了 LLM 相关的核心技术实现，代码结构清晰，适合用于学习、练手以及作为大模型开发的参考。项目涵盖了从基础的 Transformer 架构到现代化的 Llama 2 模型，再到 LoRA 微调与 PPO 强化学习的全栈技术。
+本仓库汇集了 LLM 相关的核心技术实现，代码结构清晰，适合用于学习、练手以及作为大模型开发的参考。项目涵盖了从基础的 Transformer 架构到现代化的 Llama 2、Qwen 系列模型，再到 MoE 混合专家架构、LoRA 微调与 PPO 强化学习的全栈技术。
 
 ---
 
@@ -26,6 +26,20 @@
 - **归一化**: **RMSNorm** (Root Mean Square Normalization)
 - **注意力**: 分组查询注意力 (**GQA**, Grouped Query Attention)
 - **目录**: `Llama2/`
+
+#### 🤖 Qwen 2
+阿里通义千问 Qwen2 架构复现，高性能的基础语言模型架构。
+- **优化**: 全面的 **RoPE** 集成与 **RMSNorm**
+- **注意力**: 完整支持 **GQA** (Grouped Query Attention)
+- **结构**: 深度优化的 MLP 与 Attention 模块
+- **目录**: `qwen2/`
+
+#### 🧠 Qwen 3 (MoE)
+基于 Qwen3 与 DeepSeek 架构理念的混合专家模型 (Mixture of Experts) 实现。
+- **MoE 核心**: **Shared Experts** (共享专家) + **Routed Experts** (路由专家)
+- **路由机制**: Top-K 动态路由与负载均衡
+- **稀疏激活**: 条件计算实现，大幅提升推理效率
+- **目录**: `qwen3/`
 
 ### 🔧 训练与微调 (Training & Fine-tuning)
 
@@ -54,6 +68,5 @@ RLHF (Reinforcement Learning from Human Feedback) 流程中的核心强化学习
   - DeepSeek-R1 背后的核心强化学习算法
   - 旨在提升样本效率与训练稳定性
 
-- [ ] **🧩 MoE (Mixture of Experts)**
-  - 稀疏混合专家模型
-  - 实现条件计算 (Conditional Computation) 与可扩展架构
+- [ ] **🚀 MTP (Multi-Token Prediction)**
+  - 多 Token 预测机制，提升推理速度与长文本能力
