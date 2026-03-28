@@ -30,13 +30,13 @@ llm-zeroToHero/
 ## 已覆盖内容
 
 - `foundations/attention/`: `mha.py`, `mha_kvcache.py`, `gqa.py`
-- `foundations/common/`: `linear.py`, `linearLayer.py`, `softmax.py`, `cross_entropy.py`, `mse.py`, `bpe.py`, `swiglu.py`
+- `foundations/common/`: `linear.py`, `linear_layer.py`, `softmax.py`, `cross_entropy.py`, `mse.py`, `bpe.py`, `swiglu.py`
 - `architectures/transformer/`: 编码器-解码器结构与位置编码
 - `architectures/llama2/`: Llama2 风格解码器组件
 - `architectures/qwen2/`: Qwen2 配置、RMSNorm、MLP、Attention、Model
 - `architectures/qwen3/`: Qwen3 配置、Attention、MoE、Model
 - `training/lora/`: LoRA 线性层与注意力接入
-- `training/ppo/`: PPO 训练代码与算法说明
+- `training/ppo/`: `ppo.py` 与 `ppo_algorithm_details.md`
 - `training/rl_loss/`: DPO loss、KL loss 示例
 
 ## 快速开始
@@ -58,5 +58,4 @@ pip install -e .
 1. 将目录按职责收敛为 `foundations`、`architectures`、`training` 三层。
 2. 统一顶层目录命名风格（小写），减少跨平台大小写歧义。
 3. 保留原有实现文件，优先调整组织方式，不改变算法逻辑。
-
 

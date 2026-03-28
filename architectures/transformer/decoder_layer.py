@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 from attention import multihead_attention
-from positionWiseFeedForward import PositionWiseFeedForward
-from layerNorm import LayerNorm
+from position_wise_feed_forward import PositionWiseFeedForward
+from layer_norm import LayerNorm
 
 
 class DecoderLayer(nn.Module):

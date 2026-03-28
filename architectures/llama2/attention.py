@@ -1,6 +1,6 @@
 import torch
 from typing import Tuple  # 添加此行以修复 Tuple 未定义问题
-from modelConfig import ModelConfig
+from model_config import ModelConfig
 import torch.nn as nn
 import torch.nn.functional as F
 import math

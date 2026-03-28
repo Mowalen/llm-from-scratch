@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from posEncoding import posEncoding
+from pos_encoding import posEncoding
 
 class transformerEmbedding(nn.Module):
     def __init__(self, vocab_size, dim, max_len, dropout, device):

@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from ._1_configuration import Qwen3Config
+from .configuration import Qwen3Config
 
 class Qwen3MLP(nn.Module):
     """

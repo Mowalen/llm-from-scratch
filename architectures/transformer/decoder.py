@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 
-from decoderLayer import decoderLayer
-from positionWiseFeedForward import positionWiseFeedForward
-from transformerEmbedding import transformerEmbedding
+from decoder_layer import DecoderLayer
+from position_wise_feed_forward import PositionWiseFeedForward
+from transformer_embedding import transformerEmbedding
 
 class decoder(nn.Module):
     def __init__(self, d_size, max_len , d_model , ffn_hidden , n_heads , n_layers , dropout , device):
@@ -15,7 +15,7 @@ class decoder(nn.Module):
                                         vocab_size=d_size,
                                         device=device)
 
-        self.layers = nn.ModuleList([decoderLayer(d_model=d_model,ffn_hidden=ffn_hidden,n_heads=n_heads,dropout=dropout) 
+        self.layers = nn.ModuleList([DecoderLayer(d_model=d_model,ffn_hidden=ffn_hidden,n_heads=n_heads,dropout=dropout) 
                                      for _ in range(n_layers)])
     
         self.linear = nn.Linear(d_model, d_size)

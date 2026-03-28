@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from typing import Tuple
-from ._1_configuration import Qwen3Config
+from .configuration import Qwen3Config
 
 class Qwen3MoEGate(nn.Module):
     """
